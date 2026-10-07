@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)file:///C:/Users/ASUS/Downloads/hongjiali_biosolar_executive_presentation%20(5).html -->
+<html lang="en" class="scroll-smooth"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hongjiali BioSolar Executive Presentation &amp; Financial Simulator</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="./Hongjiali &amp; BioSolar Executive Presentation &amp; Financial Simulator_files/saved_resource"></script>
+    <!-- Chart.js CDN -->
+    <script src="./Hongjiali &amp; BioSolar Executive Presentation &amp; Financial Simulator_files/chart.js.download"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="./Hongjiali &amp; BioSolar Executive Presentation &amp; Financial Simulator_files/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Hongjiali &amp; BioSolar Executive Presentation &amp; Financial Simulator_files/css2" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldlight: '#F4E07B',
+                            dark: '#0A1118',
+                            slate: '#121E2B',
+                            card: '#1A2A3A',
+                            accent: '#10B981',
+                            blue: '#2563EB'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0A1118; color: #E2E8F0; }
+        .glass-panel {
+            background: rgba(26, 42, 58, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .glass-card {
+            background: rgba(18, 30, 43, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-gold {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+        }
+        /* Custom styled range sliders */
+        input[type=range] {
+            accent-color: #D4AF37;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.-bottom-20{bottom:-5rem}.-right-20{right:-5rem}.top-0{top:0px}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-square{aspect-ratio:1 / 1}.h-10{height:2.5rem}.h-12{height:3rem}.h-2{height:0.5rem}.h-80{height:20rem}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-12{width:3rem}.w-80{width:20rem}.w-full{width:100%}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.max-w-\[320px\]{max-width:320px}.cursor-pointer{cursor:pointer}.select-all{-webkit-user-select:all;user-select:all}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.scroll-smooth{scroll-behavior:smooth}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-t-2{border-top-width:2px}.border-t-4{border-top-width:4px}.border-amber-600{--tw-border-opacity:1;border-color:rgb(217 119 6 / var(--tw-border-opacity, 1))}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-brand-gold{--tw-border-opacity:1;border-color:rgb(212 175 55 / var(--tw-border-opacity, 1))}.border-brand-gold\/20{border-color:rgb(212 175 55 / 0.2)}.border-brand-gold\/30{border-color:rgb(212 175 55 / 0.3)}.border-brand-gold\/40{border-color:rgb(212 175 55 / 0.4)}.border-emerald-500{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.border-purple-500{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-slate-800\/60{border-color:rgb(30 41 59 / 0.6)}.border-yellow-500{--tw-border-opacity:1;border-color:rgb(234 179 8 / var(--tw-border-opacity, 1))}.bg-amber-950\/20{background-color:rgb(69 26 3 / 0.2)}.bg-brand-dark{--tw-bg-opacity:1;background-color:rgb(10 17 24 / var(--tw-bg-opacity, 1))}.bg-brand-gold{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.bg-brand-gold\/10{background-color:rgb(212 175 55 / 0.1)}.bg-brand-gold\/20{background-color:rgb(212 175 55 / 0.2)}.bg-brand-slate{--tw-bg-opacity:1;background-color:rgb(18 30 43 / var(--tw-bg-opacity, 1))}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-800\/60{background-color:rgb(30 41 59 / 0.6)}.bg-slate-900\/40{background-color:rgb(15 23 42 / 0.4)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-brand-gold{--tw-gradient-from:#D4AF37 var(--tw-gradient-from-position);--tw-gradient-to:rgb(212 175 55 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-yellow-600{--tw-gradient-to:#ca8a04 var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-3{padding-bottom:0.75rem}.pb-4{padding-bottom:1rem}.pt-1{padding-top:0.25rem}.pt-4{padding-top:1rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-light{font-weight:300}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-brand-gold{--tw-text-opacity:1;color:rgb(212 175 55 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-brand-gold *::selection{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.selection\:text-black *::selection{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.selection\:bg-brand-gold::selection{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.selection\:text-black::selection{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:bg-yellow-400:hover{--tw-bg-opacity:1;background-color:rgb(250 204 21 / var(--tw-bg-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:justify-start{justify-content:flex-start}.md\:text-left{text-align:left}.md\:text-right{text-align:right}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:w-auto{width:auto}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:items-center{align-items:center}.lg\:p-10{padding:2.5rem}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}.lg\:text-base{font-size:1rem;line-height:1.5rem}.lg\:text-xl{font-size:1.25rem;line-height:1.75rem}}</style></head>
+<body class="bg-brand-dark text-slate-100 min-h-screen selection:bg-brand-gold selection:text-black">
+
+    <!-- Navigation & Audio Control Bar -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-brand-gold/30 px-4 lg:px-8 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-mx-auto flex flex-wrap items-center justify-between gap-4">
+            <!-- Brand Logo / Title -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-gold to-yellow-600 flex items-center justify-center font-black text-black text-xl shadow-lg">
+                    HJ
+                </div>
+                <div>
+                    <h1 class="text-lg lg:text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                        HONGJIALI <span class="text-brand-gold font-light">| BIO-SOLAR</span>
+                    </h1>
+                    <p class="text-xs text-slate-400" id="nav-subtitle">Integrated Clean Energy &amp; Agro-Industrial Microgrids</p>
+                </div>
+            </div>
+
+            <!-- Header Controls: Language Toggle & Global Narrator -->
+            <div class="flex flex-wrap items-center gap-3">
+                <!-- Global Text-to-Speech Controller -->
+                <div class="flex items-center bg-brand-slate rounded-lg p-1.5 border border-slate-700 gap-2">
+                    <button id="btn-play-all" onclick="togglePlayFullPresentation()" class="px-3 py-1.5 rounded-md bg-brand-gold text-slate-900 font-semibold text-xs flex items-center gap-1.5 hover:bg-yellow-400 transition">
+                        <i class="fa-solid fa-play" id="icon-play-all"></i> <span id="lbl-play-all">Listen Presentation</span>
+                    </button>
+                    <select id="narration-speed" onchange="updateNarrationRate()" class="bg-brand-dark text-xs text-brand-gold border border-brand-gold/40 rounded px-2 py-1 outline-none">
+                        <option value="1">1.0x</option>
+                        <option value="1.25" selected="">1.25x</option>
+                        <option value="1.5">1.5x</option>
+                    </select>
+                </div>
+
+                <!-- Language Toggle -->
+                <div class="flex bg-brand-slate rounded-lg p-1 border border-slate-700 text-xs font-medium">
+                    <button id="lang-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-md text-slate-900 bg-brand-gold font-bold transition">EN</button>
+                    <button id="lang-zh" onclick="setLanguage('zh')" class="px-3 py-1.5 rounded-md text-slate-300 hover:text-white transition">中文</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Strategic Corridor Banner -->
+    <section class="max-w-7xl mx-auto px-4 lg:px-8 py-8">
+        <div class="glass-panel rounded-2xl p-6 lg:p-10 border-l-4 border-brand-gold relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 relative z-10">
+                <div class="space-y-3 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-truck-fast"></i> <span id="hero-badge">South Africa Freight Corridor Infrastructure</span>
+                    </div>
+                    <h2 class="text-2xl lg:text-4xl font-extrabold text-white tracking-tight" id="hero-title">
+                        N1 / N3 / N4 Highway Freight Corridor BioSolar Hubs
+                    </h2>
+                    <p class="text-slate-300 text-sm lg:text-base leading-relaxed" id="hero-desc">
+                        Deploying Hongjiali 200kW–720kW Ultra-Fast Chargers, C&amp;I BESS, Anaerobic Bio-Digesters, Hydroponic Vertical Farming, and High-Yield Swine &amp; Poultry Agro-Units along South Africa's vital commercial logistics arteries.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                    <button onclick="readSectionText('sec-corridor-audio')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-brand-gold text-xs font-semibold flex items-center justify-center gap-2 border border-brand-gold/30 transition">
+                        <i class="fa-solid fa-volume-high"></i> <span id="btn-read-corridor">Audio Overview</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Interactive Revenue & Financial Simulator -->
+    <section class="max-w-7xl mx-auto px-4 lg:px-8 py-6 space-y-8">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+            <div>
+                <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                    <i class="fa-solid fa-calculator text-brand-gold"></i>
+                    <span id="title-simulator">Interactive Multi-Stream Revenue Engine</span>
+                </h2>
+                <p class="text-xs text-slate-400 mt-1" id="subtitle-simulator">
+                    Adjust operational microgrid parameters to model complete financial dynamics across all 5 key revenue streams.
+                </p>
+            </div>
+            <button onclick="readSectionText('sec-simulator-audio')" class="px-3 py-1.5 rounded-lg bg-brand-slate text-brand-gold border border-brand-gold/30 text-xs flex items-center gap-2 hover:bg-slate-800 transition">
+                <i class="fa-solid fa-volume-high"></i> <span id="btn-read-sim">Read Simulator Summary</span>
+            </button>
+        </div>
+
+        <!-- 5 Key Revenue Stream KPI Highlights -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <!-- Stream 1: Heavy EV Charging -->
+            <div class="glass-card p-4 rounded-xl border-l-4 border-blue-500">
+                <div class="text-xs text-slate-400 font-medium flex items-center justify-between">
+                    <span id="kpi-label-ev">Heavy EV Charging</span>
+                    <i class="fa-solid fa-charging-station text-blue-400"></i>
+                </div>
+                <div class="text-xl font-bold text-white mt-2" id="kpi-val-ev">R 30&nbsp;660&nbsp;000</div>
+                <div class="text-[10px] text-blue-400 mt-1" id="kpi-sub-ev">Ultra-Fast Freight Hub Sales</div>
+            </div>
+
+            <!-- Stream 2: BESS & Energy Sales -->
+            <div class="glass-card p-4 rounded-xl border-l-4 border-yellow-500">
+                <div class="text-xs text-slate-400 font-medium flex items-center justify-between">
+                    <span id="kpi-label-energy">Energy &amp; BESS Arbitrage</span>
+                    <i class="fa-solid fa-bolt text-yellow-400"></i>
+                </div>
+                <div class="text-xl font-bold text-white mt-2" id="kpi-val-energy">R 11&nbsp;243&nbsp;460</div>
+                <div class="text-[10px] text-yellow-400 mt-1" id="kpi-sub-energy">Grid Export &amp; Peak Shaving</div>
+            </div>
+
+            <!-- Stream 3: Hydroponic Crops -->
+            <div class="glass-card p-4 rounded-xl border-l-4 border-emerald-500">
+                <div class="text-xs text-slate-400 font-medium flex items-center justify-between">
+                    <span id="kpi-label-crops">Hydroponic Crop Sales</span>
+                    <i class="fa-solid fa-seedling text-emerald-400"></i>
+                </div>
+                <div class="text-xl font-bold text-white mt-2" id="kpi-val-crops">R 6&nbsp;048&nbsp;000</div>
+                <div class="text-[10px] text-emerald-400 mt-1" id="kpi-sub-crops">High-Yield Produce</div>
+            </div>
+
+            <!-- Stream 4: Swine & Poultry Livestock (NEWLY ENHANCED & FULLY INTEGRATED) -->
+            <div class="glass-card p-4 rounded-xl border-l-4 border-amber-600 bg-amber-950/20 glow-gold">
+                <div class="text-xs text-amber-300 font-semibold flex items-center justify-between">
+                    <span id="kpi-label-livestock">Swine &amp; Poultry Sales</span>
+                    <i class="fa-solid fa-drumstick-bite text-amber-400"></i>
+                </div>
+                <div class="text-xl font-bold text-brand-gold mt-2" id="kpi-val-livestock">R 2&nbsp;205&nbsp;000</div>
+                <div class="text-[10px] text-amber-300 mt-1" id="kpi-sub-livestock">Pork, Poultry &amp; Egg Sales</div>
+            </div>
+
+            <!-- Stream 5: Organic Digestate Fertilizer -->
+            <div class="glass-card p-4 rounded-xl border-l-4 border-purple-500">
+                <div class="text-xs text-slate-400 font-medium flex items-center justify-between">
+                    <span id="kpi-label-fertilizer">Digestate Fertilizer</span>
+                    <i class="fa-solid fa-flask text-purple-400"></i>
+                </div>
+                <div class="text-xl font-bold text-white mt-2" id="kpi-val-fertilizer">R 4&nbsp;536&nbsp;000</div>
+                <div class="text-[10px] text-purple-400 mt-1" id="kpi-sub-fertilizer">Bio-Agri Soil Nutrients</div>
+            </div>
+        </div>
+
+        <!-- Controls & Visualization Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Panel: Input Control Sliders (7 Columns) -->
+            <div class="lg:col-span-7 glass-panel p-6 rounded-2xl space-y-6">
+                <h3 class="text-lg font-bold text-white border-b border-slate-700 pb-3 flex items-center justify-between">
+                    <span id="slider-panel-title"><i class="fa-solid fa-sliders text-brand-gold mr-2"></i> Operational Input Parameters</span>
+                    <span class="text-xs font-normal text-slate-400" id="lbl-live-calc">Live Real-time Model</span>
+                </h3>
+
+                <!-- Input Group 1: Solar PV & Hongjiali BESS -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold text-brand-gold uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-sun"></i> <span id="grp-solar-bess">1. Solar PV &amp; Hongjiali BESS System</span>
+                    </h4>
+                    
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-300" id="lbl-solar-cap">Solar PV Capacity (kWp):</span>
+                            <span class="text-brand-gold font-bold" id="val-solar-cap">1000 kWp</span>
+                        </div>
+                        <input type="range" id="input-solar-cap" min="500" max="5000" step="100" value="1500" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-300" id="lbl-bess-cap">Hongjiali C&amp;I BESS Capacity (kWh):</span>
+                            <span class="text-brand-gold font-bold" id="val-bess-cap">4750 kWh</span>
+                        </div>
+                        <input type="range" id="input-bess-cap" min="500" max="10000" step="250" value="3000" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-300" id="lbl-bess-margin">BESS Peak Arbitrage Margin (ZAR/kWh):</span>
+                            <span class="text-brand-gold font-bold" id="val-bess-margin">R 4.00 / kWh</span>
+                        </div>
+                        <input type="range" id="input-bess-margin" min="0.5" max="4.0" step="0.05" value="1.85" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Input Group 2: Bio-Energy & Feedstock -->
+                <div class="space-y-4 border-t border-slate-800 pt-4">
+                    <h4 class="text-xs font-bold text-brand-gold uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-fire-flame-simple"></i> <span id="grp-bio-energy">2. Biomass &amp; Bio-Energy Anaerobic Digestion</span>
+                    </h4>
+
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-300" id="lbl-bio-feedstock">Organic Feedstock Intake (Tons / Day):</span>
+                            <span class="text-brand-gold font-bold" id="val-bio-feedstock">45 Tons/day</span>
+                        </div>
+                        <input type="range" id="input-bio-feedstock" min="10" max="150" step="5" value="45" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Input Group 3: Heavy Freight EV Mobility (Hongjiali Chargers) -->
+                <div class="space-y-4 border-t border-slate-800 pt-4">
+                    <h4 class="text-xs font-bold text-brand-gold uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-truck-monster"></i> <span id="grp-ev-mobility">3. Heavy Freight EV Charging Mobility (N1/N3/N4 Corridors)</span>
+                    </h4>
+
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-300" id="lbl-truck-charges">Daily Heavy Truck Charges (Hongjiali 200kW–720kW):</span>
+                            <span class="text-brand-gold font-bold" id="val-truck-charges">100 Trucks/day</span>
+                        </div>
+                        <input type="range" id="input-truck-charges" min="5" max="100" step="1" value="28" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-300" id="lbl-ev-tariff">EV Fast Charging Tariff (ZAR / kWh):</span>
+                            <span class="text-brand-gold font-bold" id="val-ev-tariff">R 3.00 / kWh</span>
+                        </div>
+                        <input type="range" id="input-ev-tariff" min="3.0" max="9.0" step="0.10" value="5.50" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Input Group 4: Productive Agro-Industrial Inputs (Swine, Poultry & Hydroponics) -->
+                <div class="space-y-4 border-t border-slate-800 pt-4 bg-slate-900/40 p-4 rounded-xl border border-brand-gold/20">
+                    <h4 class="text-xs font-bold text-brand-gold uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-wheat-awn"></i> <span id="grp-agriculture">4. Agricultural Outputs (Livestock, Hydroponics &amp; Digestate)</span>
+                    </h4>
+
+                    <!-- Swine Production Inputs -->
+                    <div class="p-3 bg-slate-800/60 rounded-lg space-y-2 border border-slate-700">
+                        <div class="text-xs font-semibold text-amber-300 flex items-center justify-between">
+                            <span id="lbl-swine-subhead"><i class="fa-solid fa-piggy-bank mr-1"></i> Swine Agro-Unit (Monthly Heads)</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-300" id="lbl-swine-heads">Market Swine Heads Sold / Month:</span>
+                            <span class="text-brand-gold font-bold" id="val-swine-heads">50 Heads/mo</span>
+                        </div>
+                        <input type="range" id="input-swine-heads" min="50" max="1500" step="25" value="420" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-slate-400">
+                            <span id="lbl-swine-price-tag">Avg. Market Price / Swine Head:</span>
+                            <span class="text-slate-200" id="val-swine-price">R 2,400</span>
+                        </div>
+                    </div>
+
+                    <!-- Poultry & Egg Production Inputs -->
+                    <div class="p-3 bg-slate-800/60 rounded-lg space-y-2 border border-slate-700">
+                        <div class="text-xs font-semibold text-amber-300 flex items-center justify-between">
+                            <span id="lbl-poultry-subhead"><i class="fa-solid fa-egg mr-1"></i> Poultry Flock Unit (Broilers &amp; Egg Crates)</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-300" id="lbl-poultry-flock">Broiler Birds + Egg Trays / Month:</span>
+                            <span class="text-brand-gold font-bold" id="val-poultry-flock">750 Units/mo</span>
+                        </div>
+                        <input type="range" id="input-poultry-flock" min="500" max="15000" step="250" value="3500" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-slate-400">
+                            <span id="lbl-poultry-price-tag">Avg. Realization Price / Unit:</span>
+                            <span class="text-slate-200" id="val-poultry-price">R 85</span>
+                        </div>
+                    </div>
+
+                    <!-- Hydroponic Crop Inputs -->
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-300" id="lbl-hydro-yield">Hydroponic Crop Yield (Tons / Month):</span>
+                            <span class="text-brand-gold font-bold" id="val-hydro-yield">18 Tons/mo</span>
+                        </div>
+                        <input type="range" id="input-hydro-yield" min="2" max="60" step="1" value="18" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Organic Digestate Fertilizer -->
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-300" id="lbl-fertilizer-yield">Organic Commercial Digestate Fertilizer (Tons / Month):</span>
+                            <span class="text-brand-gold font-bold" id="val-fertilizer-yield">90 Tons/mo</span>
+                        </div>
+                        <input type="range" id="input-fertilizer-yield" min="10" max="250" step="5" value="65" oninput="calculateRevenueModel()" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Financial Visualizations & Dynamic Chart.js (5 Columns) -->
+            <div class="lg:col-span-5 space-y-6">
+                <!-- Total Revenue Annual Summary Card -->
+                <div class="glass-panel p-6 rounded-2xl border-t-4 border-brand-gold text-center space-y-2">
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest" id="lbl-total-annual-rev">Projected Total Annual Revenue</div>
+                    <div class="text-3xl lg:text-4xl font-black text-brand-gold tracking-tight" id="txt-total-annual-revenue">R 54&nbsp;692&nbsp;460</div>
+                    <div class="text-xs text-slate-400 pt-1" id="txt-monthly-equivalent">Monthly Average: R 4&nbsp;557&nbsp;705</div>
+                </div>
+
+                <!-- Interactive Chart.js Donut Chart for 5 Revenue Streams -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center">
+                    <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-4 text-center" id="lbl-chart-title">
+                        5-Stream Revenue Distribution Model
+                    </h4>
+                    <div class="w-full max-w-[320px] aspect-square relative">
+                        <canvas id="revenueChart" width="400" height="400" style="display: block; box-sizing: border-box; height: 320px; width: 320px;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Strategy & Integrated Value Proposition Note -->
+                <div class="glass-card p-5 rounded-xl border border-slate-700 text-xs text-slate-300 space-y-2 leading-relaxed">
+                    <div class="font-bold text-brand-gold flex items-center gap-2">
+                        <i class="fa-solid fa-arrows-spin text-sm"></i>
+                        <span id="note-synergy-title">Circular Agro-Energy Ecosystem Synergy</span>
+                    </div>
+                    <p id="note-synergy-desc">
+                        Waste from Swine &amp; Poultry units acts as high-grade anaerobic feedstock to boost biogas yield for dispatchable power generation, while bio-digestate enriches agricultural soil and powers high-value hydroponic crops along key South African freight routes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Core Strategic Pillars & Hardware Ecosystem -->
+    <section class="max-w-7xl mx-auto px-4 lg:px-8 py-10 space-y-8 border-t border-slate-800">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                    <i class="fa-solid fa-microchip text-brand-gold"></i>
+                    <span id="title-tech-specs">Hongjiali BioSolar Hardware &amp; Operational Pillars</span>
+                </h2>
+                <p class="text-xs text-slate-400 mt-1" id="subtitle-tech-specs">
+                    High-reliability, industrial-grade microgrid hardware optimized for grid-resilient African transport corridors.
+                </p>
+            </div>
+            <button onclick="readSectionText('sec-tech-audio')" class="px-3 py-1.5 rounded-lg bg-brand-slate text-brand-gold border border-brand-gold/30 text-xs flex items-center gap-2 hover:bg-slate-800 transition">
+                <i class="fa-solid fa-volume-high"></i> <span id="btn-read-tech">Read Hardware Pillar Summary</span>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Hardware Pillar 1 -->
+            <div class="glass-card p-6 rounded-2xl border-t-2 border-brand-gold space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-charging-station"></i>
+                </div>
+                <h3 class="text-base font-bold text-white" id="pill1-title">200kW–720kW Ultra-Fast Heavy EV Chargers</h3>
+                <p class="text-xs text-slate-300 leading-relaxed" id="pill1-desc">
+                    Designed specifically for N1/N3/N4 corridor heavy freight trucks, offering liquid-cooled charging cables, split-power matrix allocation, and instant grid buffer support.
+                </p>
+            </div>
+
+            <!-- Hardware Pillar 2 -->
+            <div class="glass-card p-6 rounded-2xl border-t-2 border-brand-gold space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-car-battery"></i>
+                </div>
+                <h3 class="text-base font-bold text-white" id="pill2-title">Hongjiali C&amp;I BESS Units</h3>
+                <p class="text-xs text-slate-300 leading-relaxed" id="pill2-desc">
+                    High-density LFP battery energy storage system with active liquid thermal management, millisecond load switching, and advanced peak-shaving tariff arbitrage logic.
+                </p>
+            </div>
+
+            <!-- Hardware Pillar 3 -->
+            <div class="glass-card p-6 rounded-2xl border-t-2 border-brand-gold space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-wheat-awn"></i>
+                </div>
+                <h3 class="text-base font-bold text-white" id="pill3-title">Bio-Agro Industrial Park Integration</h3>
+                <p class="text-xs text-slate-300 leading-relaxed" id="pill3-desc">
+                    Anaerobic digestate reactors paired with climate-controlled hydroponic greenhouses and high-density swine and poultry units, driving local economic security and waste-to-energy circularity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Executive Sign-Off Footer -->
+    <footer class="border-t border-slate-800 bg-brand-slate py-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-2 text-lg font-bold text-white">
+                    <span class="text-brand-gold">HONGJIALI</span> BIO-SOLAR MICROGRID CO.
+                </div>
+                <p class="text-xs text-slate-400" id="footer-tagline">
+                    Commercial Highway Mobility &amp; Agro-Industrial Clean Energy Acceleration
+                </p>
+            </div>
+
+            <!-- Contact Information - Plain Text Security Standard -->
+            <div class="glass-panel px-6 py-4 rounded-xl text-center md:text-right space-y-1">
+                <div class="text-xs text-slate-400 uppercase tracking-wider" id="footer-contact-lbl">Executive Contact &amp; Partnerships</div>
+                <div class="text-sm font-mono font-bold text-brand-gold select-all">
+                    siphokhuzwayo12@gmail.com
+                </div>
+                <div class="text-[11px] text-slate-500" id="footer-location">
+                    South Africa Freight Corridor Infrastructure Development
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 mt-8 border-t border-slate-800/60 pt-4 text-center text-[11px] text-slate-500">
+            © 2026 Hongjiali BioSolar Microgrids. All Rights Reserved. Executive Presentation Model.
+        </div>
+    </footer>
+
+    <!-- Hidden SpeechSynthesis Script Texts for Speech Reader -->
+    <div class="hidden">
+        <div id="sec-corridor-audio">
+            Welcome to the Hongjiali BioSolar Executive Presentation. We are establishing integrated clean energy microgrid hubs across South Africa's vital N1, N3, and N4 highway freight corridors. Combining Hongjiali 200kW to 720kW ultra-fast EV chargers, commercial battery storage, bio-gas digestion, hydroponic farming, and swine and poultry agro-units.
+        </div>
+        <div id="sec-simulator-audio">
+            This interactive financial simulator models the five key revenue streams of our microgrid model: heavy EV commercial fast charging, BESS energy sales and arbitrage, hydroponic crop sales, swine and poultry livestock production, and commercial organic digestate fertilizer sales.
+        </div>
+        <div id="sec-tech-audio">
+            Our microgrid hardware ecosystem leverages Hongjiali ultra-fast chargers engineered for heavy electric freight, robust battery storage systems for grid stability, and circular agro-industrial processing units that turn organic agricultural waste into clean power and valuable fertilizers.
+        </div>
+    </div>
+
+    <!-- JavaScript Application State, Chart.js, SpeechSynthesis & Calculation Engine -->
+    <script>
+        let currentLang = 'en';
+        let revenueChart = null;
+        let speechSynth = window.speechSynthesis;
+        let currentUtterance = null;
+        let isPlayingAll = false;
+
+        // Bilingual Dictionary Data Structure
+        const i18n = {
+            en: {
+                navSubtitle: "Integrated Clean Energy & Agro-Industrial Microgrids",
+                btnPlayAll: "Listen Presentation",
+                heroBadge: "South Africa Freight Corridor Infrastructure",
+                heroTitle: "N1 / N3 / N4 Highway Freight Corridor BioSolar Hubs",
+                heroDesc: "Deploying Hongjiali 200kW–720kW Ultra-Fast Chargers, C&I BESS, Anaerobic Bio-Digesters, Hydroponic Vertical Farming, and High-Yield Swine & Poultry Agro-Units along South Africa's vital commercial logistics arteries.",
+                btnReadCorridor: "Audio Overview",
+                titleSimulator: "Interactive Multi-Stream Revenue Engine",
+                subtitleSimulator: "Adjust operational microgrid parameters to model complete financial dynamics across all 5 key revenue streams.",
+                btnReadSim: "Read Simulator Summary",
+                
+                kpiEv: "Heavy EV Charging",
+                kpiEvSub: "Ultra-Fast Freight Hub Sales",
+                kpiEnergy: "Energy & BESS Arbitrage",
+                kpiEnergySub: "Grid Export & Peak Shaving",
+                kpiCrops: "Hydroponic Crop Sales",
+                kpiCropsSub: "High-Yield Produce",
+                kpiLivestock: "Swine & Poultry Sales",
+                kpiLivestockSub: "Pork, Poultry & Egg Sales",
+                kpiFertilizer: "Digestate Fertilizer",
+                kpiFertilizerSub: "Bio-Agri Soil Nutrients",
+
+                sliderPanelTitle: "Operational Input Parameters",
+                lblLiveCalc: "Live Real-time Model",
+                grpSolarBess: "1. Solar PV & Hongjiali BESS System",
+                lblSolarCap: "Solar PV Capacity (kWp):",
+                lblBessCap: "Hongjiali C&I BESS Capacity (kWh):",
+                lblBessMargin: "BESS Peak Arbitrage Margin (ZAR/kWh):",
+
+                grpBioEnergy: "2. Biomass & Bio-Energy Anaerobic Digestion",
+                lblBioFeedstock: "Organic Feedstock Intake (Tons / Day):",
+
+                grpEvMobility: "3. Heavy Freight EV Charging Mobility (N1/N3/N4 Corridors)",
+                lblTruckCharges: "Daily Heavy Truck Charges (Hongjiali 200kW–720kW):",
+                lblEvTariff: "EV Fast Charging Tariff (ZAR / kWh):",
+
+                grpAgriculture: "4. Agricultural Outputs (Livestock, Hydroponics & Digestate)",
+                lblSwineSubhead: "Swine Agro-Unit (Monthly Heads)",
+                lblSwineHeads: "Market Swine Heads Sold / Month:",
+                lblSwinePriceTag: "Avg. Market Price / Swine Head:",
+                lblPoultrySubhead: "Poultry Flock Unit (Broilers & Egg Crates)",
+                lblPoultryFlock: "Broiler Birds + Egg Trays / Month:",
+                lblPoultryPriceTag: "Avg. Realization Price / Unit:",
+                lblHydroYield: "Hydroponic Crop Yield (Tons / Month):",
+                lblFertilizerYield: "Organic Commercial Digestate Fertilizer (Tons / Month):",
+
+                lblTotalAnnualRev: "Projected Total Annual Revenue",
+                lblChartTitle: "5-Stream Revenue Distribution Model",
+                noteSynergyTitle: "Circular Agro-Energy Ecosystem Synergy",
+                noteSynergyDesc: "Waste from Swine & Poultry units acts as high-grade anaerobic feedstock to boost biogas yield for dispatchable power generation, while bio-digestate enriches agricultural soil and powers high-value hydroponic crops along key South African freight routes.",
+
+                titleTechSpecs: "Hongjiali BioSolar Hardware & Operational Pillars",
+                subtitleTechSpecs: "High-reliability, industrial-grade microgrid hardware optimized for grid-resilient African transport corridors.",
+                btnReadTech: "Read Hardware Pillar Summary",
+                pill1Title: "200kW–720kW Ultra-Fast Heavy EV Chargers",
+                pill1Desc: "Designed specifically for N1/N3/N4 corridor heavy freight trucks, offering liquid-cooled charging cables, split-power matrix allocation, and instant grid buffer support.",
+                pill2Title: "Hongjiali C&I BESS Units",
+                pill2Desc: "High-density LFP battery energy storage system with active liquid thermal management, millisecond load switching, and advanced peak-shaving tariff arbitrage logic.",
+                pill3Title: "Bio-Agro Industrial Park Integration",
+                pill3Desc: "Anaerobic digestate reactors paired with climate-controlled hydroponic greenhouses and high-density swine and poultry units, driving local economic security and waste-to-energy circularity.",
+
+                footerTagline: "Commercial Highway Mobility & Agro-Industrial Clean Energy Acceleration",
+                footerContactLbl: "Executive Contact & Partnerships",
+                footerLocation: "South Africa Freight Corridor Infrastructure Development"
+            },
+            zh: {
+                navSubtitle: "综合清洁能源与现代农工业微电网",
+                btnPlayAll: "播放全篇演讲",
+                heroBadge: "南非货运走廊基建",
+                heroTitle: "N1 / N3 / N4 高速公路货运走廊生物太阳能枢纽",
+                heroDesc: "沿南非核心物流干线部署鸿佳利 200kW–720kW 超级快充桩、工商业储能 (BESS)、厌氧生物反应器、水培垂直农业以及高产生猪与家禽养殖单元。",
+                btnReadCorridor: "语音概述",
+                titleSimulator: "多流动态营收模型与财务模拟",
+                subtitleSimulator: "调节微电网运营参数，实时模拟五大核心营收流的财务收益。",
+                btnReadSim: "朗读模拟器摘要",
+
+                kpiEv: "重型电动车充电",
+                kpiEvSub: "快充枢纽服务收入",
+                kpiEnergy: "电力与储能套利",
+                kpiEnergySub: "电网上网与削峰填谷",
+                kpiCrops: "水培作物销售",
+                kpiCropsSub: "高价值农产品收入",
+                kpiLivestock: "生猪与家禽销售",
+                kpiLivestockSub: "猪肉、家禽及蛋类销售",
+                kpiFertilizer: "沼渣有机肥销售",
+                kpiFertilizerSub: "生物农业土壤营养剂",
+
+                sliderPanelTitle: "微电网运营输入参数",
+                lblLiveCalc: "实时计算模型",
+                grpSolarBess: "1. 光伏与鸿佳利储能系统 (BESS)",
+                lblSolarCap: "光伏装机容量 (kWp):",
+                lblBessCap: "鸿佳利工商业储能容量 (kWh):",
+                lblBessMargin: "储能峰谷套利利润 (兰特/kWh):",
+
+                grpBioEnergy: "2. 生物质能与厌氧发酵系统",
+                lblBioFeedstock: "有机原料日处理量 (吨/天):",
+
+                grpEvMobility: "3. 重型卡车电动交通 (N1/N3/N4 货运走廊)",
+                lblTruckCharges: "日均重卡充电车次 (鸿佳利 200kW–720kW):",
+                lblEvTariff: "电动车快充服务费 (兰特/kWh):",
+
+                grpAgriculture: "4. 农业综合产出 (畜禽、水培与有机肥)",
+                lblSwineSubhead: "生猪养殖单元 (月出栏量)",
+                lblSwineHeads: "每月出栏生猪数量 (头):",
+                lblSwinePriceTag: "生猪平均单价:",
+                lblPoultrySubhead: "家禽与蛋类单元 (肉鸡与蛋箱)",
+                lblPoultryFlock: "每月肉鸡及蛋箱数量 (单位):",
+                lblPoultryPriceTag: "家禽及蛋类平均单价:",
+                lblHydroYield: "水培作物月产量 (吨/月):",
+                lblFertilizerYield: "商业沼渣有机肥月产量 (吨/月):",
+
+                lblTotalAnnualRev: "预计年度总营收",
+                lblChartTitle: "五大营收流占比分布模型",
+                noteSynergyTitle: "循环农能生态协同效应",
+                noteSynergyDesc: "生猪和家禽养殖废弃物作为优质厌氧发酵原料，显著提升沼气产量用于可调度发电；同时沼渣有机肥可滋养土壤并为南非主要货运干线旁的水培温室提供养分。",
+
+                titleTechSpecs: "鸿佳利生物太阳能硬件与运营支柱",
+                subtitleTechSpecs: "针对具备电网韧性的非洲交通走廊优化的工业级高可靠微电网硬件。",
+                btnReadTech: "朗读硬件支柱摘要",
+                pill1Title: "200kW–720kW 超级快充桩",
+                pill1Desc: "专为 N1/N3/N4 走廊重型货运卡车设计，配备液冷充电枪、动态功率分配与即时电网缓冲支持。",
+                pill2Title: "鸿佳利工商业储能 (BESS)",
+                pill2Desc: "高能量密度磷酸铁锂电池储能系统，具备液冷热管理、毫秒级切换与智能削峰填谷电价套利逻辑。",
+                pill3Title: "生物农业工业园集成",
+                pill3Desc: "厌氧发酵反应器结合温控水培温室及高密度生猪家禽养殖单元，推动地方经济安全与废弃物能源化循环。",
+
+                footerTagline: "商业公路交通电动化与农工业清洁能源加速器",
+                footerContactLbl: "高管联系与战略合作",
+                footerLocation: "南非货运走廊基础设施开发"
+            }
+        };
+
+        function calculateRevenueModel() {
+            // Get Slider Values
+            const solarCap = parseFloat(document.getElementById('input-solar-cap').value);
+            const bessCap = parseFloat(document.getElementById('input-bess-cap').value);
+            const bessMargin = parseFloat(document.getElementById('input-bess-margin').value);
+            const bioFeedstock = parseFloat(document.getElementById('input-bio-feedstock').value);
+            const truckCharges = parseFloat(document.getElementById('input-truck-charges').value);
+            const evTariff = parseFloat(document.getElementById('input-ev-tariff').value);
+            
+            const swineHeads = parseFloat(document.getElementById('input-swine-heads').value);
+            const poultryFlock = parseFloat(document.getElementById('input-poultry-flock').value);
+            const hydroYield = parseFloat(document.getElementById('input-hydro-yield').value);
+            const fertilizerYield = parseFloat(document.getElementById('input-fertilizer-yield').value);
+
+            // Update Input Labels UI
+            document.getElementById('val-solar-cap').innerText = `${solarCap} kWp`;
+            document.getElementById('val-bess-cap').innerText = `${bessCap} kWh`;
+            document.getElementById('val-bess-margin').innerText = `R ${bessMargin.toFixed(2)} / kWh`;
+            document.getElementById('val-bio-feedstock').innerText = `${bioFeedstock} Tons/day`;
+            document.getElementById('val-truck-charges').innerText = `${truckCharges} Trucks/day`;
+            document.getElementById('val-ev-tariff').innerText = `R ${evTariff.toFixed(2)} / kWh`;
+            
+            document.getElementById('val-swine-heads').innerText = `${swineHeads} Heads/mo`;
+            document.getElementById('val-poultry-flock').innerText = `${poultryFlock} Units/mo`;
+            document.getElementById('val-hydro-yield').innerText = `${hydroYield} Tons/mo`;
+            document.getElementById('val-fertilizer-yield').innerText = `${fertilizerYield} Tons/mo`;
+
+            // CONSTANTS FOR FINANCIAL REVENUE CALCULATIONS
+            const AVG_TRUCK_CHARGE_KWH = 280; // kWh per heavy truck charge session
+            const SWINE_HEAD_PRICE_ZAR = 2400; // Market price per swine head in ZAR
+            const POULTRY_UNIT_PRICE_ZAR = 85; // Average price per broiler / egg crate in ZAR
+            const HYDROPONIC_CROP_PRICE_PER_TON = 28000; // ZAR per ton of high-value produce
+            const DIGESTATE_FERTILIZER_PRICE_PER_TON = 4200; // ZAR per ton of commercial fertilizer
+
+            // REVENUE STREAM 1: Heavy Freight EV Charging (Annual ZAR)
+            // Daily sessions * kWh per charge * EV tariff * 365 days
+            const annualEvRev = truckCharges * AVG_TRUCK_CHARGE_KWH * evTariff * 365;
+
+            // REVENUE STREAM 2: Energy Sales & BESS Peak Arbitrage (Annual ZAR)
+            // (Solar PV generation * export tariff) + (BESS capacity * 1.5 cycles/day * arbitrage margin * 365)
+            const annualSolarGenKwh = solarCap * 4.8 * 365; // 4.8 peak sun hours
+            const annualSolarExportRev = annualSolarGenKwh * 0.40 * 1.20; // 40% exported at R1.20/kWh
+            const annualBessArbitrageRev = bessCap * 1.5 * bessMargin * 365;
+            const annualEnergyRev = annualSolarExportRev + annualBessArbitrageRev;
+
+            // REVENUE STREAM 3: Hydroponic Crop Sales (Annual ZAR)
+            const annualCropRev = hydroYield * HYDROPONIC_CROP_PRICE_PER_TON * 12;
+
+            // REVENUE STREAM 4: Swine & Poultry Livestock Sales (Annual ZAR - FULLY INTEGRATED)
+            const annualSwineRev = swineHeads * SWINE_HEAD_PRICE_ZAR * 12;
+            const annualPoultryRev = poultryFlock * POULTRY_UNIT_PRICE_ZAR * 12;
+            const annualLivestockRev = annualSwineRev + annualPoultryRev;
+
+            // REVENUE STREAM 5: Organic Digestate Commercial Fertilizer (Annual ZAR)
+            const annualFertilizerRev = fertilizerYield * DIGESTATE_FERTILIZER_PRICE_PER_TON * 12;
+
+            // TOTAL ANNUAL REVENUE
+            const totalAnnualRev = annualEvRev + annualEnergyRev + annualCropRev + annualLivestockRev + annualFertilizerRev;
+            const monthlyAvgRev = totalAnnualRev / 12;
+
+            // Update KPI Cards UI
+            document.getElementById('kpi-val-ev').innerText = formatCurrency(annualEvRev);
+            document.getElementById('kpi-val-energy').innerText = formatCurrency(annualEnergyRev);
+            document.getElementById('kpi-val-crops').innerText = formatCurrency(annualCropRev);
+            document.getElementById('kpi-val-livestock').innerText = formatCurrency(annualLivestockRev);
+            document.getElementById('kpi-val-fertilizer').innerText = formatCurrency(annualFertilizerRev);
+
+            // Update Total Summary
+            document.getElementById('txt-total-annual-revenue').innerText = formatCurrency(totalAnnualRev);
+            document.getElementById('txt-monthly-equivalent').innerText = `Monthly Average: ${formatCurrency(monthlyAvgRev)}`;
+
+            // Update Dynamic Chart.js Chart
+            updateChart([annualEvRev, annualEnergyRev, annualCropRev, annualLivestockRev, annualFertilizerRev]);
+        }
+
+        function formatCurrency(val) {
+            return 'R ' + val.toLocaleString('en-ZA', { maximumFractionDigits: 0 });
+        }
+
+        function initChart() {
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            revenueChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        i18n[currentLang].kpiEv,
+                        i18n[currentLang].kpiEnergy,
+                        i18n[currentLang].kpiCrops,
+                        i18n[currentLang].kpiLivestock,
+                        i18n[currentLang].kpiFertilizer
+                    ],
+                    datasets: [{
+                        data: [1, 1, 1, 1, 1],
+                        backgroundColor: [
+                            '#2563EB', // EV Charging - Blue
+                            '#EAB308', // Energy & BESS - Yellow
+                            '#10B981', // Hydroponics - Emerald
+                            '#D4AF37', // Swine & Poultry - Gold (Primary Focus)
+                            '#A855F7'  // Digestate Fertilizer - Purple
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#121E2B'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#94A3B8',
+                                font: { size: 10, family: 'Inter' },
+                                padding: 12,
+                                boxWidth: 10
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const value = context.raw || 0;
+                                    return ` R ${value.toLocaleString('en-ZA', { maximumFractionDigits: 0 })}`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '65%'
+                }
+            });
+        }
+
+        function updateChart(dataArray) {
+            if (revenueChart) {
+                revenueChart.data.datasets[0].data = dataArray;
+                revenueChart.data.labels = [
+                    i18n[currentLang].kpiEv,
+                    i18n[currentLang].kpiEnergy,
+                    i18n[currentLang].kpiCrops,
+                    i18n[currentLang].kpiLivestock,
+                    i18n[currentLang].kpiFertilizer
+                ];
+                revenueChart.update();
+            }
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Toggle Active Button Styles
+            if (lang === 'en') {
+                document.getElementById('lang-en').className = "px-3 py-1.5 rounded-md text-slate-900 bg-brand-gold font-bold transition";
+                document.getElementById('lang-zh').className = "px-3 py-1.5 rounded-md text-slate-300 hover:text-white transition";
+            } else {
+                document.getElementById('lang-zh').className = "px-3 py-1.5 rounded-md text-slate-900 bg-brand-gold font-bold transition";
+                document.getElementById('lang-en').className = "px-3 py-1.5 rounded-md text-slate-300 hover:text-white transition";
+            }
+
+            // Update All DOM Text Elements
+            const keys = Object.keys(i18n[lang]);
+            keys.forEach(key => {
+                const el = document.getElementById(key);
+                if (el) {
+                    el.innerText = i18n[lang][key];
+                }
+            });
+
+            // Recalculate and update chart labels
+            calculateRevenueModel();
+        }
+
+        // SpeechSynthesis Voice Reader Logic
+        function readSectionText(elementId) {
+            if (!speechSynth) return;
+            speechSynth.cancel(); // Stop ongoing speech
+
+            const text = document.getElementById(elementId).innerText;
+            currentUtterance = new SpeechSynthesisUtterance(text);
+            currentUtterance.rate = parseFloat(document.getElementById('narration-speed').value) || 1.25;
+            currentUtterance.lang = currentLang === 'zh' ? 'zh-CN' : 'en-US';
+            
+            speechSynth.speak(currentUtterance);
+        }
+
+        function togglePlayFullPresentation() {
+            if (!speechSynth) return;
+
+            if (isPlayingAll) {
+                speechSynth.cancel();
+                isPlayingAll = false;
+                document.getElementById('icon-play-all').className = "fa-solid fa-play";
+                document.getElementById('lbl-play-all').innerText = i18n[currentLang].btnPlayAll;
+            } else {
+                speechSynth.cancel();
+                const textCorridor = document.getElementById('sec-corridor-audio').innerText;
+                const textSim = document.getElementById('sec-simulator-audio').innerText;
+                const textTech = document.getElementById('sec-tech-audio').innerText;
+                
+                const fullText = `${textCorridor}. ${textSim}. ${textTech}`;
+                currentUtterance = new SpeechSynthesisUtterance(fullText);
+                currentUtterance.rate = parseFloat(document.getElementById('narration-speed').value) || 1.25;
+                currentUtterance.lang = currentLang === 'zh' ? 'zh-CN' : 'en-US';
+
+                currentUtterance.onend = function() {
+                    isPlayingAll = false;
+                    document.getElementById('icon-play-all').className = "fa-solid fa-play";
+                    document.getElementById('lbl-play-all').innerText = i18n[currentLang].btnPlayAll;
+                };
+
+                speechSynth.speak(currentUtterance);
+                isPlayingAll = true;
+                document.getElementById('icon-play-all').className = "fa-solid fa-square";
+                document.getElementById('lbl-play-all').innerText = currentLang === 'zh' ? "停止朗读" : "Stop Speech";
+            }
+        }
+
+        function updateNarrationRate() {
+            if (speechSynth && speechSynth.speaking) {
+                speechSynth.cancel();
+                if (isPlayingAll) {
+                    isPlayingAll = false;
+                    togglePlayFullPresentation();
+                }
+            }
+        }
+
+        // On Page Load Initialization
+        window.onload = function() {
+            initChart();
+            calculateRevenueModel();
+        };
+    </script>
+
+</body></html>
